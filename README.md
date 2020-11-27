@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# OhHeck
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+OhHeck card dealing.
+
+## Development Notes
+
+Currently, we are cloning [digitaldesignlabs/responsive-playing-cards](https://github.com/digitaldesignlabs/responsive-playing-cards) into `src/Card/` in order to provide the card SVG files.
 
 ## Available Scripts
 
