@@ -14,9 +14,9 @@ export default class Deck {
   /**
    * Deal from deck.
    *
+   * @param {number} numCards       The number of cards to deal.
    * @param {number} playerPosition The zero indexed player position.
    * @param {number} playerCount    The number of players receiving cards.
-   * @param {number} numCards       The number of cards to deal.
    *
    * e.g. deal(10, 0, 10) will deal ten (10) cards to the first player (0) in a
    * game with five (5) players.
