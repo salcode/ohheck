@@ -52,12 +52,14 @@ function Hand(props) {
     {cards
       .sort(cardCompare)
       .map(
-      (card) => <Card
-        className='card'
-        key={`${card.value}${card.suit}`}
-        suit={card.suit}
-        value={card.value}
-      />
+      (card) =>
+        <li key={`${card.value}${card.suit}`}>
+          <Card
+            className='card'
+            suit={card.suit}
+            value={card.value}
+          />
+        </li>
     )}
   </ul>
 }

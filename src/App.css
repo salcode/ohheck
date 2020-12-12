@@ -1,3 +1,15 @@
+.App {
+  padding: 20px;
+}
+
+.hand {
+  list-style: none;
+  padding: 0;
+}
+.hand>li {
+  display: inline;
+}
+
 .hand .card {
   border: 1px solid #000;
   margin-right: 5px;
