@@ -2,26 +2,44 @@ import './App.css';
 import PlayerCards from './PlayerCards';
 
 import Deck from './objects/Deck.js';
+import Round from './objects/Round.js';
+
+const getUrlInfo = () => ({
+  checksum: '123',
+  name: 'Corvita',
+  numCardsEachRound: [2, 3, 4, 5, 5],
+  playerIndex: 1,
+  gameId: 'abc123',
+  totalPlayers: 2,
+});
 
 function App() {
-  const cardsForEachHand = [
-    9, 9, 9, 6,
-  ];
-  const hands = [];
-  const numHands = cardsForEachHand.length;
-  for (let i=0; i<numHands; i++) {
-    const deck = new Deck(),
-      numCards = cardsForEachHand[i],
-      playerPosition = 0,
-      playerCount = 5;
-
-    hands.push(
-      deck.deal(numCards, playerPosition, playerCount)
+  const {
+    gameId,
+    name,
+    numCardsEachRound,
+    playerIndex,
+    totalPlayers,
+  } = getUrlInfo();
+  const rounds = [];
+  const numRounds = numCardsEachRound.length;
+  for (let i=0; i<numRounds; i++) {
+    rounds.push(
+      new Round(
+        new Deck(gameId),
+        numCardsEachRound[i],
+        totalPlayers,
+      )
     );
   }
   return (
     <div className="App">
-      <PlayerCards hands={hands} />
+      <div>{name} ({gameId})</div>
+      <PlayerCards
+        hands={rounds.map(
+          (round) => round.getHand(playerIndex)
+        )}
+      />
     </div>
   );
 }
