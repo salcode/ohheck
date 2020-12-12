@@ -34,7 +34,7 @@ function App() {
   }
   return (
     <div className="App">
-      <div>{name} ({gameId})</div>
+      <div className="user-name-and-game-id">{name} (Game: {gameId})</div>
       <PlayerCards
         rounds={rounds}
         playerIndex={playerIndex}
