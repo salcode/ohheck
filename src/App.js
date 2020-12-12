@@ -29,6 +29,7 @@ function App() {
         new Deck(gameId),
         numCardsEachRound[i],
         totalPlayers,
+        i + 1 < numRounds
       )
     );
   }

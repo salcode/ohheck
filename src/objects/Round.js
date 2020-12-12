@@ -1,8 +1,14 @@
 export default class Round {
-  constructor(deck, numCardsPerHand, playerCount) {
+  constructor(
+    deck,
+    numCardsPerHand,
+    playerCount,
+    hasTrump = true,
+  ) {
     this.deck = deck;
     this.numCardsPerHand = numCardsPerHand;
     this.playerCount = playerCount;
+    this.hasTrump = hasTrump;
   }
 
   getHand(playerIndex) {
@@ -13,9 +19,13 @@ export default class Round {
     );
   }
 
-  getTrumpCard() {
-    return this.deck.getCard(
+  getTrumpCardAsString() {
+    if (!this.hasTrump) {
+      return 'no';
+    }
+    const trumpCard = this.deck.getCard(
       this.numCardsPerHand * this.playerCount
     );
+    return `${trumpCard.value} ${trumpCard.suit}`;
   }
 }
