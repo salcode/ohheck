@@ -1,5 +1,7 @@
 import shuffle from '../utilities/shuffle.js';
 
+const isValidIndex = (index) => index >= 0 && index <= 52;
+
 export default class Deck {
   constructor() {
     this.cards = shuffle(
@@ -24,13 +26,21 @@ export default class Deck {
   deal(numCards, playerPosition, playerCount) {
     const playerCards = [];
     for (let i=0; i<numCards; i++) {
+      const index = i*playerCount+playerPosition;
       playerCards.push(
-        this.cards[
-          i*playerCount+playerPosition
-        ]
+        this.getCard(index)
       );
     }
     return playerCards;
+  }
+
+  getCard(index) {
+    if (!isValidIndex(index)) {
+      throw Error(
+        `Attempted to get card with bad index: ${index}`
+      );
+    }
+    return this.cards[index];
   }
 
   _getUnshuffledDeck() {
