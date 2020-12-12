@@ -12,4 +12,10 @@ export default class Round {
       this.playerCount,
     );
   }
+
+  getTrumpCard() {
+    return this.deck.getCard(
+      this.numCardsPerHand * this.playerCount
+    );
+  }
 }
