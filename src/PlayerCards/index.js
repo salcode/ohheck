@@ -5,14 +5,15 @@ import Hand from '../Hand';
 
 function PlayerCards(props) {
   const {
-    hands,
+    playerIndex,
+    rounds,
   } = props;
   return (
-    hands.map(
-      (hand, i) =>
+    rounds.map(
+      (round, i) =>
         <div key={i}>
           <strong>Round {i+1}</strong>
-          <Hand cards={hand} />
+          <Hand cards={round.getHand(playerIndex)} />
           <hr />
         </div>
     )

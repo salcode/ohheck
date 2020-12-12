@@ -36,9 +36,8 @@ function App() {
     <div className="App">
       <div>{name} ({gameId})</div>
       <PlayerCards
-        hands={rounds.map(
-          (round) => round.getHand(playerIndex)
-        )}
+        rounds={rounds}
+        playerIndex={playerIndex}
       />
     </div>
   );
