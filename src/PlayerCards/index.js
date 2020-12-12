@@ -13,6 +13,8 @@ function PlayerCards(props) {
       (round, i) =>
         <div key={i}>
           <strong>Round {i+1}</strong>
+          &nbsp;
+          ({`${round.getTrumpCard().value} ${round.getTrumpCard().suit}`} trump)
           <Hand cards={round.getHand(playerIndex)} />
           <hr />
         </div>
