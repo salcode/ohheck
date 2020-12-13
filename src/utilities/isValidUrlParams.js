@@ -1,9 +1,22 @@
-function isValidUrlParams(obj, hash) {
+const objectHash = require("object-hash");
+
+function isValidUrlParams(obj, hashKey) {
   const {
     numCardsEachRound,
     playerIndex,
     totalPlayers,
   } = obj;
+
+  const objHashed = objectHash(obj);
+
+  if (hashKey !== objHashed.substr(0, 8)) {
+    console.log(
+      'The key for the URL parameters is not valid',
+    );
+    return false;
+  }
+
+
   if (
     playerIndex < 0 ||
     playerIndex >= totalPlayers
