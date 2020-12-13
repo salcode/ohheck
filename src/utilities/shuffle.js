@@ -3,8 +3,10 @@
  *
  * See https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
  */
-function shuffle(array) {
-  const randomNumberGenerator = Math.random;
+const seedrandom = require('seedrandom');
+
+function shuffle(array, seed) {
+  const randomNumberGenerator = seedrandom(seed);
   let currentIndex = array.length,
     temporaryValue,
     randomIndex;
