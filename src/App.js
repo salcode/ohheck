@@ -9,7 +9,8 @@ import isValidUrlParams from './utilities/isValidUrlParams.js';
 
 function App() {
   const urlParams = getUrlParams();
-  if (!isValidUrlParams(urlParams)) {
+  const hashkey = new URLSearchParams(window.location.search).get('key') ?? '';
+  if (!isValidUrlParams(urlParams, hashkey)) {
     return (
       <div className="App">
         <h1>Invalid Game Information</h1>
