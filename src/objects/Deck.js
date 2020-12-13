@@ -3,7 +3,7 @@ import shuffle from '../utilities/shuffle.js';
 const isValidIndex = (index) => index >= 0 && index <= 52;
 
 export default class Deck {
-  constructor(seed) {
+  constructor(seed, roundNum) {
     const deck = this._getUnshuffledDeck();
     if ('' === seed) {
       // When there is no seed, do NOT shuffle the deck.
@@ -12,7 +12,7 @@ export default class Deck {
       // Use the seed value in shuffling the deck.
       this.cards = shuffle(
         this._getUnshuffledDeck(),
-        seed
+        `${seed} ${roundNum}`
       );
     }
   }

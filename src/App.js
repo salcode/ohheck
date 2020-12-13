@@ -19,7 +19,7 @@ function App() {
   for (let i=0; i<numRounds; i++) {
     rounds.push(
       new Round(
-        new Deck(`${gameId} ${i}`),
+        new Deck(gameId, i),
         numCardsEachRound[i],
         totalPlayers,
         i + 1 < numRounds
