@@ -4,14 +4,7 @@ import PlayerCards from './PlayerCards';
 import Deck from './objects/Deck.js';
 import Round from './objects/Round.js';
 
-const getUrlInfo = () => ({
-  checksum: '123',
-  name: 'Corvita',
-  numCardsEachRound: [2, 3, 4, 5, 5],
-  playerIndex: 1,
-  gameId: 'abc123',
-  totalPlayers: 2,
-});
+import getUrlParams from './utilities/getUrlParams.js';
 
 function App() {
   const {
@@ -20,7 +13,7 @@ function App() {
     numCardsEachRound,
     playerIndex,
     totalPlayers,
-  } = getUrlInfo();
+  } = getUrlParams();
   const rounds = [];
   const numRounds = numCardsEachRound.length;
   for (let i=0; i<numRounds; i++) {
