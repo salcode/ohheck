@@ -1,7 +1,6 @@
 function getUrlParams() {
   const queryParams = new URLSearchParams(window.location.search);
   const urlInfo = {
-    checksum: queryParams.get('name') ?? '',
     gameId: queryParams.get('id') ?? '',
     name: queryParams.get('name') ?? 'Player',
     numCardsEachRound:
