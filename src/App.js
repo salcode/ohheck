@@ -5,15 +5,24 @@ import Deck from './objects/Deck.js';
 import Round from './objects/Round.js';
 
 import getUrlParams from './utilities/getUrlParams.js';
+import isValidUrlParams from './utilities/isValidUrlParams.js';
 
 function App() {
+  const urlParams = getUrlParams();
+  if (!isValidUrlParams(urlParams)) {
+    return (
+      <div className="App">
+        <h1>Invalid Game Information</h1>
+      </div>
+    );
+  }
   const {
     gameId,
     name,
     numCardsEachRound,
     playerIndex,
     totalPlayers,
-  } = getUrlParams();
+  } = urlParams;
   const rounds = [];
   const numRounds = numCardsEachRound.length;
   for (let i=0; i<numRounds; i++) {
