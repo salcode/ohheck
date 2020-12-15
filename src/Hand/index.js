@@ -27,10 +27,10 @@ const cardValueCompare = (a, b) => {
 
 const cardCompare = (a, b) => {
   const firstToLast = [
-    'spades',
-    'diamonds',
-    'clubs',
     'hearts',
+    'clubs',
+    'diamonds',
+    'spades',
   ];
 
   const aIndex = firstToLast.indexOf(a.suit);
