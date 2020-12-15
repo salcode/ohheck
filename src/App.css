@@ -9,6 +9,16 @@
 .hand>li {
   display: inline;
 }
+li.suit-hearts + li.suit-clubs,
+li.suit-hearts + li.suit-diamonds,
+li.suit-hearts + li.suit-spades,
+
+li.suit-clubs + li.suit-diamonds,
+li.suit-clubs + li.suit-spades,
+
+li.suit-diamonds + li.suit-spades {
+  margin-left: 45px;
+}
 
 .hand .card {
   border: 1px solid #000;
