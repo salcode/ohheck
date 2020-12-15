@@ -53,7 +53,7 @@ function Hand(props) {
       .sort(cardCompare)
       .map(
       (card) =>
-        <li key={`${card.value}${card.suit}`}>
+        <li className={`suit-${card.suit}`} key={`${card.value}${card.suit}`}>
           <Card
             className='card'
             suit={card.suit}
